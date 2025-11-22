@@ -21,7 +21,7 @@ def main(args):
     print("Loading Data...")
     train_data = pd.read_csv('./data/train.csv').drop(columns=['ID', '제품'])
 
-    # 3. Preprocessing (Scaling) - Notebook logic 그대로
+    # 3. Preprocessing (Scaling)
     print("Preprocessing Data...")
     scale_max_dict = {}
     scale_min_dict = {}
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--predict_size', type=int, default=21)
     parser.add_argument('--epochs', type=int, default=10)
     parser.add_argument('--lr', type=float, default=1e-4)
-    parser.add_argument('--batch_size', type=int, default=1024) # 4096은 너무 커서 줄임 (메모리 에러 시 조절)
+    parser.add_argument('--batch_size', type=int, default=1024)
     parser.add_argument('--hidden_size', type=int, default=512)
     parser.add_argument('--seed', type=int, default=41)
     parser.add_argument('--save_path', type=str, default='./saved_models')
